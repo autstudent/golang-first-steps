@@ -169,3 +169,60 @@ for _, value := range cardValues{
     cards = append(cards, suit+" of "+value)
 }
 ```
+
+## Byte slices
+
+A byte slice is a set of bytes which represents a certain amount of data in a specific format.
+
+[10 234 123 45 224 111 231 123] -> Each number represents a character in ascii representation
+
+This type or structure of data is so popular in golang to work with data or strings.
+
+- Translate string to byte slide
+
+```$bash
+[]byte("Hi there!")
+```
+
+- Translate a slice to byte slide
+
+```$bash
+array := ["pepe","manuela"]
+chain := strings.Join([]string(array), ","]
+[]byte(chain)
+```
+
+## Handle errors
+
+Normally, errors are a specific returned value in different functions. You need to review this value in order to detect errors:
+
+```$bash
+// bs -> new []byte from the file with the information
+// err -> []byte with the error message
+bs, err := ioutil.ReadFile(filename)
+if err != nill {
+    fmt.Println("Error:", err)
+    os.Exit(1)
+}
+```
+
+IMPORTANT: When you receive an error, it is possible to return a default value o quit the program. It is important to keep in mind this aspect when you implement a new func.
+
+## Write and Read to/from file
+
+- Write
+
+```$bash
+// File Name, a string in byte[] and permission for this file
+return ioutil.WriteFile(filename, []byte(d.toString()), 0640)
+```
+
+- Read
+
+```$bash
+// bs -> new []byte from the file with the information
+// err -> []byte with the error message
+bs, err := ioutil.ReadFile(filename)
+...
+return string(bs)
+```
