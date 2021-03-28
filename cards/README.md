@@ -226,3 +226,55 @@ bs, err := ioutil.ReadFile(filename)
 ...
 return string(bs)
 ```
+
+## Change number position in slide
+
+With this method, it is possible to change the specific item in a slice in a simple way:
+
+- A non definitive algorithm:
+
+```$bash
+for i := range d {
+    newPosition := rand.Intn(len(d)-1)
+    d[i], d[newPosition] = d[newPosition], d[i]
+}
+```
+
+- Definitive algorithm:
+
+```$bash
+source := rand.NewSource(time.Now().UnixNano())
+r := rand.New(source)
+
+for i := range d {
+    newPosition := r.Intn(len(d) - 1)
+    d[i], d[newPosition] = d[newPosition], d[i]
+}
+```
+
+## Tests
+
+Golang does not use a specific testing framework, usually this uses a normal golang code to test its applications.
+
+To create a test, it is only required to create a new test file ending in **_test.gp** and run them with the following command:
+
+```$bash
+go test
+```
+
+Regarding implement a new test, it is required:
+
+- Create a new file  **_test.gp**
+- Added the regular package name (E.g. _package main_)
+- Create a function per each function which we want to test wit UpperCase letters
+- Added the function argument behind golang testing (_func TestNewDeck(t *testing.T)_)
+- Added the expression adding if statement and triggering an error with *testing.T* library
+
+```$bash
+func TestNewDeck(t *testing.T) {
+    d := newDeck()
+    if len(d) != 16 {
+        t.Error("Expected deck length of 16, but got", len(d))
+    }
+}
+```
