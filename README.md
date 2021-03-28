@@ -9,6 +9,7 @@ In this repository, it is possible to find the following content:
 - helloword: Folder with the minimal Golang app expressions
 - cards: A Golang app which emulates a cards games (E.g Poker)
 - steps: A set of folder with specific examples around the course main topics
+- examples: A set of exercises proposed during the course
 
 ## Topics
 
