@@ -32,6 +32,7 @@ This repository, based on the mentioned course, covers the following topics arou
 - Byte Slices
 - Handle errors
 - Write/Read files
+- Golang simple tests
 
 ## Author
 
