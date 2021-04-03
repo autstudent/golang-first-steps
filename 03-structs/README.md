@@ -135,3 +135,53 @@ func (p person) print(){
 	fmt.Printf("%+v", p)
 }
 ´´´
+
+It is important to bear in mind the following aspects:
+
+- "&var" references a memory pointer in order to be able to modify this object created before (give the memory address of the value)
+
+´´´$bash
+jimPointer := &jim
+jimPointer.updateName("pepe")
+´´´
+
+- "*var" helps users to obtain the value of the previous memory address obtained
+
+
+´´´$bash
+// *person -> The type of the pointer
+func (pointerToPerson *person) updateName(newFirstName string)  {
+    // *pointerToPerson -> The operator which facilitates the object management
+	(*pointerToPerson).firstName = newFirstName
+}
+´´´
+
+Just as summary:
+
+- Turn address into value with *adress
+- Turn value into address with &value
+
+### Shortcut
+
+A shortcut is a sort way of working with pointers, solving the problem of using the variable required to obtain an object memory address. For example:
+
+´´´$bash
+jim.updateName("pepe")
+
+func (pointerToPerson *person) updateName(newFirstName string)  {
+    (*pointerToPerson).firstName = newFirstName
+}
+´´´
+
+### Important
+
+When you are working with params instead of receiver, the previous concepts don't apply and you are able to work without pointers. For example:
+
+´´´$bash
+name := "Bill"
+updateName(name)
+
+func updateName(n string)  {
+    n = "Alex"
+}
+´´´

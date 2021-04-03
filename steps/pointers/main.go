@@ -36,17 +36,6 @@ func main()  {
 	jimPointer := &jim
 	jimPointer.updateName("Pepe")
 	jim.print()
-
-	sam := person{
-		firstName: "Sam",
-		lastName: "Bar",
-		contact: contactInfo{
-			email: "sam@gmail.com",
-			zipCode: 28043,
-		},
-	}
-	sam.updateName("Pepe")
-	sam.print()
 }
 
 func (pointerToPerson *person) updateName(newFirstName string)  {
