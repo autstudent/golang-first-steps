@@ -1,15 +1,4 @@
-# Deeper into Go
-
-We are working here with an application with different pieces:
-
-- newDeck
-- print
-- shuffle
-- deal
-- saveToFile
-- newDeckFromFile
-
-## Structs
+# Structs
 
 Structs are data models which allows define a new category of object like dictionaries.
 
