@@ -18,15 +18,6 @@ func main()  {
 		os.Exit(1)
 	}
 
-	// Read http respon body
-	// bs := make([]byte, 99999)
-	// resp.Body.Read(bs)
-	// fmt.Println(string(bs))
-
-	// Log information in a terminal nicely
-	// io.Copy(os.Stdout, resp.Body)
-	
-	// Log information with a custom writter
 	lw := logWriter{}
 	io.Copy(lw, resp.Body)
 
