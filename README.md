@@ -10,7 +10,8 @@ In this repository, it is possible to find the following content:
 - 02-cards: A Golang app which emulates a cards games (E.g Poker)
 - 03-structs: A set of example around structs
 - 04-maps: A set of example around maps
-- 04-interfaces: A set of example around interfaces
+- 05-interfaces: A set of example around interfaces
+- 06-channels-gorutines: A set of example around channels and Go routines
 - steps: A set of folder with specific examples around the course main topics
 - examples: A set of exercises proposed during the course
 
@@ -41,6 +42,7 @@ This repository, based on the mentioned course, covers the following topics arou
 - Pointers
 - Maps
 - Interfaces
+- Channels and Go Routines
 
 ## Author
 
